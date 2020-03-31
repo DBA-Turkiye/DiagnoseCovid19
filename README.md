@@ -109,15 +109,13 @@ By using this data, in the first step - Identify Risk - we are defining a risk (
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/HighRisk.png)
 
-You can also find these rules inside this folder. 
+You can also find these rules inside [this folder](https://github.com/DBA-Turkiye/DiagnoseCovid19/tree/master/ODM/Rules). 
 
 After defining risk, in our decision table we are defining the required action by combining risk, age and abroad travel history of the patient. And using this information inside BAW to calculate the direction of the workflow.  
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/DecisionTable.png)
 
 
-
-****
 
 # BAW - Business Automation Workflow
 
