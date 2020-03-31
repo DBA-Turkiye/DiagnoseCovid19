@@ -61,6 +61,10 @@ You can find the summary of required actions in order to import ODM & BPM projec
 * From the toolbar, click Deploy to deploy this decision service. 
 * Click deploy on the pop-up. 
 * From Deployments tab, you can track the status of your deployment. 
+  
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Decision%20Center%20Deploy.png)
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Decision%20Center%20Deploy%20-%202.png)
 
 **Exposing the rule via REST API**
 
@@ -80,8 +84,10 @@ You can find the summary of required actions in order to import ODM & BPM projec
 * Click download to download Swagger Json file of the REST API. You can use this json file to implement this REST Service inside IBM BAW. Since it has been done before inside Process Application, you don't need to take this action. If you need to make any changes in the Decision Service, you have to follow above steps. 
 * By clicking Test button, you can make calls to the REST API and test your decision service.
 
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/RES%20-%20RuleApps%20View.png)
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/RES%20-%20RuleSet%20View.png)
 
-
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/RES%20-%20REST%20API.png)
 
 # BAW - Business Automation Workflow
 
