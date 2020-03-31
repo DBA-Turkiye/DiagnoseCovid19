@@ -26,6 +26,29 @@ The know-how shared on this asset;
     * Deploy a decision service. 
     * Test decision service through REST API. 
 * IBM BAI:
+	* Transfer data from BPM & ODM
+	* Creating dashboards from collected data. 
+	* Using emitters to collect data. 
+
+## Product Versions
+| Product       | Version       | 
+| ------------- |:-------------:| 
+| BAW       | 19.0.0.3		|	 
+| ODM    |       |
+| BAI |       |
+
+## PreRequirements
+* DB2 Database
+* Common Toolkit should be imported to your BAW Workspace- github link
+* 
+
+
+# Business Automation Workflow
+##  Implementing Workflow
+
+
+
+
 
 
 
