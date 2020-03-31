@@ -109,8 +109,42 @@ For more details you can check: [Importing and Exporting Process Applications](h
 * Save changes. 
 
 
+**Add Environment Variable** 
+
+* Open Process App Settings
+* Click Environment Variables
+* Add a new Environment Variable with below parameters if not exists
+  * Key: DataSourceName
+  * Default: jdbc/IBMCloudDB2 - Be sure that you have defined Data source inside WAS as defined in the toolkit repository [documentation](https://github.com/DBA-Turkiye/BAWCommonToolkit).
 
 
+### Starting the Process from Process Portal
+
+* Go to Process Portal https://YOURIP:PORT/ProcessPortal
+* Find Corona Diagnosis Process and click to start
+* First step with name Step: Self Assessment will be assigned to current user. 
+* Click on the name of the step to open Self Assessment UI. 
+* Fill Citizen Info, Address, Medical History and Symptoms.
+  * In order to pass meaningful structured data to BAI, filling below fields are recommended;
+    * Did you traveled abroad within the past 14 days?
+    * Country
+    * City
+    * State
+    * BirthDate
+    * Symptom Details
+    * Medical History
+* After clicking on Submit button, all above information gathered from UI are consolidated and sent to the ODM to get if a patient with given symptoms, personal information and medical history is under risk or not. If the system can not decide a new task is assigned to a medical team to allow them investigate and decide the necessary action to take. 
+  * If the customer is not under risk;
+    * An e-mail including information about how to prevent from COVID-19 is sent to the patient. 
+  * If the system decides the informations needs to be reviewed by a doctor.
+    * A new task is assigned to a medical team. They will check information and decide if the patient;
+      * Needs to be quarantined
+        * A new task is assigned to emergency team to send an ambulance to the address of the patient. 
+      * Needs to stay at home for 14 days;
+        * A new task is assigned to call center team and they give information to patient on the call. Also, an e-mail including preventive information is going to be sent to the patient. 
+        * After 14 days, a new task is assigned to the medical team to let them check the status of the patient. 
+      * Is healthy
+        * An e-mail including preventive information is going to be sent to the patient. 
 
 
 
