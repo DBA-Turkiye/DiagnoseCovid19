@@ -8,6 +8,8 @@ Required rules to diagnose symptoms are defined inside [IBM ODM](https://www.ibm
 It is very important to provide a flexible and easy to change platform in such situations. Since it is a new epidemic and each day as citizens, we and health organizations are learning a new behaviour of this virus. So, the symptoms and affect on cronical diseases may differ day by day.  
 All of the rulesets implemented inside ODM can easily be changed with the light of recommendations of medical boards. 
 
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Scenario.png)
+
 The know-how shared on this asset;
 
  * IBM BAW:
