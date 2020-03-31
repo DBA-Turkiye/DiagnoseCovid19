@@ -1,0 +1,5 @@
+if
+    there are 0  DiseaseHistories  in the MedicalHistories  of 'the sympthom list' where the Severity of each DiseaseHistory is one of {"Severe","Mild","Moderate"}, and
+    there are at most 3 Symptoms in the Symptoms  of 'the sympthom list' 
+then
+    set decision to "LowRisk" ;

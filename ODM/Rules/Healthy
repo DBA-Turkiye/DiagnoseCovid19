@@ -1,0 +1,5 @@
+if
+    there are 0 Symptoms in the Symptoms of 'the sympthom list'  and
+    there are 0 DiseaseHistories in the MedicalHistories of 'the sympthom list' where the Severity of each DiseaseHistory is "None",
+then
+    set decision to "Healthy" ;

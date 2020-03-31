@@ -1,0 +1,16 @@
+if
+    any of the following conditions is true : 
+       -there is at least one DiseaseHistory  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of this DiseaseHistory  is one of  { "Moderate","Severe" }, 
+        and there are at least 2 Symptoms in the Symptoms of 'the sympthom list'
+
+       -there are at least 2 DiseaseHistories  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of  each DiseaseHistory is one of  { "Moderate","Severe" }, 
+        and there are at most 2 Symptoms in the Symptoms of 'the sympthom list'
+
+        -there is at least one DiseaseHistory  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of  this DiseaseHistory is "Severe",
+        and there are at least 2 Symptoms in the Symptoms of 'the sympthom list',
+
+then
+    set decision to "HighRisk" ;

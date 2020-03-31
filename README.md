@@ -89,6 +89,36 @@ You can find the summary of required actions in order to import ODM & BPM projec
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/RES%20-%20REST%20API.png)
 
+### ODM Decision Service Details
+
+Followed below steps to generate ODM Decision Model;
+
+**Draw a decision model and define input and output data types.**
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/DecisionModel.png)
+
+As you can see from the decision model, our first step to get Diagnose Input Data from BAw. Inside this data model, we are receiving the symptoms, medical history, age and abroad travel history of the patient. 
+
+By using this data, in the first step - Identify Risk - we are defining a risk (Healthy, LowRisk, MediumRisk or HighRisk) for the patient.
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/Healthy.png)
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/LowRisk.png)
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/MediumRisk.png)
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/HighRisk.png)
+
+You can also find these rules inside this folder. 
+
+After defining risk, in our decision table we are defining the required action by combining risk, age and abroad travel history of the patient. And using this information inside BAW to calculate the direction of the workflow.  
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/DecisionTable.png)
+
+
+
+****
+
 # BAW - Business Automation Workflow
 
 ## Execute DB Scripts

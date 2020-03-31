@@ -1,0 +1,20 @@
+if
+    any of the following conditions is true : 
+       -there is at least one DiseaseHistory  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of this DiseaseHistory  is one of  { "Moderate","Severe" }, 
+        and the number of  Symptoms in the Symptoms of 'the sympthom list'  is at least 1 and less than 3
+
+       -there are at least 2 DiseaseHistories  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of  each DiseaseHistory is one of  { "Moderate","Severe" }, 
+        and there are at most 2 Symptoms in the Symptoms of 'the sympthom list'
+
+        -there are at least 3 DiseaseHistories  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of  each DiseaseHistory is one of  { "Mild" }, 
+        and there are at least 3 Symptoms in the Symptoms of 'the sympthom list'
+
+        -there is at least one DiseaseHistory  in the MedicalHistories of 'the sympthom list'  
+                where the Severity of  this DiseaseHistory is "Severe",
+        and the number of Symptoms in the Symptoms of 'the sympthom list' is 1,
+
+then
+    set decision to "MediumRisk" ;
