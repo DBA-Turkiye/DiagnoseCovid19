@@ -115,6 +115,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 * Change Host Name and Port with your ODM server host and port info. 
 * Save changes. 
 
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAW%20-%20ODM%20Server.png)
 
 **Add Environment Variable** 
 
@@ -129,6 +130,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 
 * Go to Process Portal https://YOURIP:PORT/ProcessPortal
 * Find Corona Diagnosis Process and click to start
+* ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Process%20Portal%20-%20Corona.png)
 * First step with name Step: Self Assessment will be assigned to current user. 
 * Click on the name of the step to open Self Assessment UI. 
 * Fill Citizen Info, Address, Medical History and Symptoms.
@@ -153,7 +155,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
       * Is healthy
         * An e-mail including preventive information is going to be sent to the patient. 
 
-
+**BPMN 2.0 Workflow**
 
 
 
