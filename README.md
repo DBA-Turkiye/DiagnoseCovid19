@@ -130,7 +130,6 @@ For more details you can check: [Importing and Exporting Process Applications](h
 
 * Go to Process Portal https://YOURIP:PORT/ProcessPortal
 * Find Corona Diagnosis Process and click to start
-* ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Process%20Portal%20-%20Corona.png)
 * First step with name Step: Self Assessment will be assigned to current user. 
 * Click on the name of the step to open Self Assessment UI. 
 * Fill Citizen Info, Address, Medical History and Symptoms.
@@ -164,5 +163,10 @@ For more details you can check: [Importing and Exporting Process Applications](h
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Address.png)
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Medical%20History.png)
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Symptom%20List.png)
-![]()
+
+**Recommendation & Home Quarantine Email Content**
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Recommendation%20Email.png)
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Home%20Quarantine%20-%20Email.png)
+
 
