@@ -34,8 +34,8 @@ The know-how shared on this asset;
 | Product       | Version       | 
 | ------------- |:-------------:| 
 | BAW       | 19.0.0.3		|	 
-| ODM    |       |
-| BAI |       |
+| ODM    |  8.9.2     |
+
 
 ## PreRequirements
 * DB2 Database
@@ -80,6 +80,9 @@ You can find the summary of required actions in order to import ODM & BPM projec
 * Click download to download Swagger Json file of the REST API. You can use this json file to implement this REST Service inside IBM BAW. Since it has been done before inside Process Application, you don't need to take this action. If you need to make any changes in the Decision Service, you have to follow above steps. 
 * By clicking Test button, you can make calls to the REST API and test your decision service.
 
+
+
+
 # BAW - Business Automation Workflow
 
 ## Execute DB Scripts
@@ -97,6 +100,13 @@ For more details you can check: [Importing and Exporting Process Applications](h
 * Click Choose File to select Process Application file with .twx extension. You can download the latest version of the Process App from BAW folder under this repo.  
 * In the Import Process App window, a name and acronym have been specified based on information in the file you selected.
 * You can filter the messages by clicking Errors or Warnings.
+
+**Change ODM Host Information**
+* Open Process App Settings
+* Click Servers
+* You will see a server named DiagnoseSymptomsServer, click on this.
+* Change Host Name and Port with your ODM server host and port info. 
+* Save changes. 
 
 
 
