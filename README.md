@@ -157,8 +157,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 
 **BPMN 2.0 Workflow**
 
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BPMN%20-%20Workflow.png)
 
-
-
-
+**User Interface**
 
