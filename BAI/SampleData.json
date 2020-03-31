@@ -1,0 +1,92 @@
+{
+  "_index": "process-summaries-completed-idx-ibm-bai-2020.01.22-000001",
+  "_type": "process-summary",
+  "_id": "24935edb-f9b2-4981-bc55-765d4b5d1684.d59fe52e-66e5-4443-8858-6f54bd035ddb.3308.5",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "version": "1.0.4",
+    "timestamp": "2020-03-31T15:43:58.560-04:00",
+    "bpmCellName": "PCCell1",
+    "bpmSystemId": "d59fe52e-66e5-4443-8858-6f54bd035ddb",
+    "potentialPerformerId": "All Users_T_da7e4d23-78cb-4483-98ed-b9c238308a03.d9dbe09a-8c27-47c2-9e1d-a2f0422fedca",
+    "potentialPerformerName": "All Users",
+    "performerId": "admin",
+    "performerName": "admin",
+    "type": "userTask",
+    "name": "Self Assessment",
+    "activityId": "b0f6d500-eb57-4592-8d17-a22560b1c33d",
+    "activityVersionId": "2064.29d5d849-8b8b-458d-8760-8d8716279a85",
+    "id": "24935edb-f9b2-4981-bc55-765d4b5d1684.d59fe52e-66e5-4443-8858-6f54bd035ddb.3308.5",
+    "trace-id": "2956747e-2807-45de-a982-d92f131a6dbc",
+    "span-id": "0fd5abdaf236c814",
+    "processApplicationId": "58365361-515d-4650-96fc-396a471f5772",
+    "processApplicationVersionId": "2064.29d5d849-8b8b-458d-8760-8d8716279a85",
+    "processApplicationName": "Corona",
+    "processId": "24935edb-f9b2-4981-bc55-765d4b5d1684",
+    "processVersionId": "2064.29d5d849-8b8b-458d-8760-8d8716279a85",
+    "processInstanceId": "24935edb-f9b2-4981-bc55-765d4b5d1684.d59fe52e-66e5-4443-8858-6f54bd035ddb.3308",
+    "shortProcessInstanceId": "3308",
+    "processName": "Corona Diagnosis Process",
+    "taskInstanceId": "4263",
+    "state": "Completed",
+    "startTime": "2020-03-31T15:37:34.476-04:00",
+    "claimedTime": "2020-03-31T15:37:43.477-04:00",
+    "completedTime": "2020-03-31T15:43:58.571-04:00",
+    "waitDuration": 9001,
+    "executionDuration": 375094,
+    "duration": 384095,
+    "data": {
+      "SelfAssessmentTG": {
+        "@ids": {
+          "trackingGroupId": "52a357f4-c987-4bdd-9ed1-9ba5acf511c9",
+          "trackingGroupVersionId": "2064.29d5d849-8b8b-458d-8760-8d8716279a85T"
+        },
+        "District.string": "ddfwe",
+        "City.string": "Corona",
+        "Country.string": "USA",
+        "Age.integer": 26,
+        "AbroadTravel.string": "Yes",
+        "Gender.string": "Female",
+        "AssessmentResult.string": "NeedsQuarantine",
+        "StepInfo.string": "SelfAssessment",
+        "Fever.string": "Yes",
+        "Cough.string": "Yes",
+        "Fatigue.string": "Yes",
+        "Weakness.string": "Yes",
+        "ItchyEyes.string": "No",
+        "Exhaustation.string": "No",
+        "Diabetes.string": "Severe",
+        "HearthCondition.string": "None",
+        "Asthma.string": "None",
+        "Hypertension.string": "None",
+        "ImmuneSystemDisease.string": "None",
+        "AssessmentDate.dateTime": "2020-03-31T19:43:49.786Z",
+        "Sneezing.string": "No",
+        "RunnyNose.string": "No",
+        "MildChestDiscomfort.string": "No",
+        "StateInfo.string": "California"
+      }
+    }
+  },
+  "fields": {
+    "completedTime": [
+      "2020-03-31T19:43:58.571Z"
+    ],
+    "claimedTime": [
+      "2020-03-31T19:37:43.477Z"
+    ],
+    "data.SelfAssessmentTG.AssessmentDate.dateTime": [
+      "2020-03-31T19:43:49.786Z"
+    ],
+    "startTime": [
+      "2020-03-31T19:37:34.476Z"
+    ],
+    "timestamp": [
+      "2020-03-31T19:43:58.560Z"
+    ]
+  },
+  "sort": [
+    1585683838560
+  ]
+}
