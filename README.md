@@ -160,4 +160,9 @@ For more details you can check: [Importing and Exporting Process Applications](h
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BPMN%20-%20Workflow.png)
 
 **User Interface**
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Citizen%20Info.png)
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Address.png)
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Medical%20History.png)
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Symptom%20List.png)
+![]()
 
