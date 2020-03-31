@@ -2,10 +2,10 @@
 
 This asset is created to show how to define a workflow inside [IBM BAW](https://www.ibm.com/products/business-automation-workflow) (Business Automation Workflow) including UI designs, service integration, database integration and ODM integration. It also gives information about how to integrate workflow data with [IBM BAI](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/topics/con_bai_overview.html) (Business Automation Insights) and generate custom graphics and reports from the data transferred to BAI. 
 
-We chose a hot topic subject and implemented a workflow and ruleset which is related to COVID-19. It can be used by Ministry of Health or healthcare organizations in order to gather symptoms, disease history and physical information from citizens and diagnose if they are infected by COVID-19 or not.  It also helps these organizations to manage inform the citizens and conduct the emergency situations like quarantine if required. 
+It can be used by Ministry of Health or healthcare organizations in order to gather symptoms, disease history and physical information from citizens and diagnose if they are infected by COVID-19 or not.  It also helps these organizations to manage inform the citizens and conduct the emergency situations like quarantine / sending ambulance / monitoring the patient during home quarantine if required. 
 
 Required rules to diagnose symptoms are defined inside [IBM ODM](https://www.ibm.com/products/operational-decision-manager) (Operational Decision Manager) to make them easy to change quickly without the need of IT. 
-It is very important to provide a flexible and easy to change platform in such situations. Since it is a new epidemic and each day as citizens we and health organizations are learning a new behaviour of this virus. So, the symptoms and affect on ironical diseases may differ day by day.  
+It is very important to provide a flexible and easy to change platform in such situations. Since it is a new epidemic and each day as citizens, we and health organizations are learning a new behaviour of this virus. So, the symptoms and affect on cronical diseases may differ day by day.  
 All of the rulesets implemented inside ODM can easily be changed with the light of recommendations of medical boards. 
 
 The know-how shared on this asset;
@@ -52,7 +52,7 @@ You can find the summary of required actions in order to import ODM & BPM projec
 * Open Decision Center - https://YOURIP:PORT/decisioncenter/login
 * Open Decision Service Library
 * Click Import button on the upper left side of the window. 
-* Choose .zip file that you downloaded from this repo under ODM folder. - Be sure that you have donwloaded the latest version.
+* Choose .zip file that you downloaded from this repo under [ODM folder](https://github.com/DBA-Turkiye/DiagnoseCovid19/tree/master/ODM). - Be sure that you downloaded the latest version.
 * After uploading file, click Import. 
 
 **Deploying the service**
@@ -87,9 +87,10 @@ You can find the summary of required actions in order to import ODM & BPM projec
 
 ## Execute DB Scripts
 
-Execute scripts inside SQL Scripts folder. Be sure that you have followed the required steps to import Common Toolkit [repository](https://github.com/DBA-Turkiye/BAWCommonToolkit) and executed DB Scripts inside there.
+Execute scripts inside [SQL Scripts](https://github.com/DBA-Turkiye/DiagnoseCovid19/tree/master/SQL%20Scripts) folder. Be sure that you have followed the required steps to import Common Toolkit [repository](https://github.com/DBA-Turkiye/BAWCommonToolkit) and executed DB Scripts inside there.
 
 These scripts includes required parameters to be use inside this project such Sypmtoms for COVID-19, Gender, Medical Disease types, City, County information and some approval status parameters. 
+
 
 ##  Import Process Application
 
@@ -97,7 +98,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 
 * Open IBM Workflow Center - https://YOURIP:PORT/WorkflowCenter/
 * Click Import Process App
-* Click Choose File to select Process Application file with .twx extension. You can download the latest version of the Process App from BAW folder under this repo.  
+* Click Choose File to select Process Application file with .twx extension. You can download the latest version of the Process App from [BAW folder](https://github.com/DBA-Turkiye/DiagnoseCovid19/tree/master/BAW) under this repo.  
 * In the Import Process App window, a name and acronym have been specified based on information in the file you selected.
 * You can filter the messages by clicking Errors or Warnings.
 
@@ -115,7 +116,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 * Click Environment Variables
 * Add a new Environment Variable with below parameters if not exists
   * Key: DataSourceName
-  * Default: jdbc/IBMCloudDB2 - Be sure that you have defined Data source inside WAS as defined in the toolkit repository [documentation](https://github.com/DBA-Turkiye/BAWCommonToolkit).
+  * Default: jdbc/IBMCloudDB2 - Be sure that you have defined Data source inside WAS as defined in the toolkit repository [documentation](https://github.com/DBA-Turkiye/BAWCommonToolkit#define-jdbc-resource-on-was).
 
 
 ### Starting the Process from Process Portal
