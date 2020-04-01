@@ -74,10 +74,9 @@ All of the rulesets implemented inside ODM can easily be changed with the light 
 ##  4. <a name='PreRequirements'></a>PreRequirements
 * DB2 Database
 * Common Toolkit should be imported to your BAW. Check the [repository](https://github.com/DBA-Turkiye/BAWCommonToolkit) and documentation for more information. 
-* 
 
 
-You can find the summary of required actions in order to import ODM & BPM project. 
+You can find the summary of required actions in order to import ODM & BPM project below. 
 
 ##  5. <a name='ODM-OperationalDecisionManager'></a>ODM - Operational Decision Manager
 
