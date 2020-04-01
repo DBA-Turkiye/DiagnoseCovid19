@@ -32,7 +32,7 @@
 <!-- /vscode-markdown-toc -->
 
 # Implementing COVID-19 Symptom Diagnosing by Using IBM Automation Solutions
-
+* 🧿
 ##  1. <a name='Summary'></a>Summary
 
 This asset is created to show how to define a workflow inside [IBM BAW](https://www.ibm.com/products/business-automation-workflow) (Business Automation Workflow) including UI designs, service integration, database integration and ODM integration. It also gives information about how to integrate workflow data with [IBM BAI](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/topics/con_bai_overview.html) (Business Automation Insights) and generate custom graphics and reports from the data transferred to BAI. 
@@ -258,10 +258,10 @@ To build a dashboard in Kibana, users must have data indexed in Elasticsearch an
 
 To build a dashboard, users can follow these steps:
 
-1- In the side navigation, click Dashboard.
-2 - Click Create new dashboard.
-3- Click Add.
-4 -Use Add Panels to add visualizations and saved searches to the dashboard. If there are a large number of visualizations, the lists can be filtered.
+* 1 - In the side navigation, click Dashboard.
+* 2 - Click Create new dashboard.
+* 3- Click Add.
+* 4 -Use Add Panels to add visualizations and saved searches to the dashboard. If there are a large number of visualizations, the lists can be filtered.
 
 
 ###  7.4. <a name='DataTransmittedtotheBAIformBAW'></a>Data Transmitted to the BAI form BAW
