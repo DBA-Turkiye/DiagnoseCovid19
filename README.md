@@ -1,4 +1,3 @@
-* 🧿
 <!-- vscode-markdown-toc -->
 * 1. [Summary](#Summary)
 * 2. [Shared Know-How](#SharedKnow-How)
@@ -33,7 +32,7 @@
 <!-- /vscode-markdown-toc -->
 
 # Implementing COVID-19 Symptom Diagnosing by Using IBM Automation Solutions
-
+* 🧿
 ##  1. <a name='Summary'></a>Summary
 
 This asset is created to show how to define a workflow inside [IBM BAW](https://www.ibm.com/products/business-automation-workflow) (Business Automation Workflow) including UI designs, service integration, database integration and ODM integration. It also gives information about how to integrate workflow data with [IBM BAI](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/topics/con_bai_overview.html) (Business Automation Insights) and generate custom graphics and reports from the data transferred to BAI. 
