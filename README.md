@@ -21,6 +21,8 @@
 * 7. [Business Automation Insights](#BusinessAutomationInsights)
 	* 7.1. [BAI Architecture](#BAIArchitecture)
 	* 7.2. [COVID - 19 Dashboard](#COVID-19Dashboard)
+	* 7.3. [WhatisaKibanadashboard](#WhatisaKibanadashboard)
+		* 7.3.1 [How do I create dashboards in Kibana?](#HowdoIcreatedashboardsinKibana)
 	* 7.3. [Data Transmitted to the BAI form BAW](#DataTransmittedtotheBAIformBAW)
 
 <!-- vscode-markdown-toc-config
@@ -246,7 +248,23 @@ In this scenario, we passed the information gathered from patients to the BAI fr
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Process%20Dashboard.jpeg)
 
-###  7.3. <a name='DataTransmittedtotheBAIformBAW'></a>Data Transmitted to the BAI form BAW
+###  7.3. <a name='WhatisaKibanadashboard'></a>What is a Kibana dashboard
+
+A Kibana dashboard is a collection of charts, graphs, metrics, searches, and maps that have been collected together onto a single pane. Dashboards provide at-a-glance insights into data from multiple perspectives and enable users to drill down into the details.
+
+###  7.3.1. <a name='HowdoIcreatedashboardsinKibana'></a>How do I create dashboards in Kibana?
+
+To build a dashboard in Kibana, users must have data indexed in Elasticsearch and have already built a search, visualization, or map. From within Kibana, click Dashboard in the side navigation. When opening the Dashboard interface, an overview of existing dashboards is presented. If there are no dashboards, sample data sets can be added, which include pre-built dashboards.
+
+To build a dashboard, users can follow these steps:
+
+1- In the side navigation, click Dashboard.
+2 - Click Create new dashboard.
+3- Click Add.
+4 -Use Add Panels to add visualizations and saved searches to the dashboard. If there are a large number of visualizations, the lists can be filtered.
+
+
+###  7.4. <a name='DataTransmittedtotheBAIformBAW'></a>Data Transmitted to the BAI form BAW
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Json.png)
 
 You can import prepared Kibana dashboards to your BAI environment by using [this json file](https://github.com/DBA-Turkiye/DiagnoseCovid19/blob/master/BAI/BAI%20Export.json).
