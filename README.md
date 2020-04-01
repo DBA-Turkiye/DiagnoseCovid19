@@ -243,6 +243,10 @@ In this scenario, we passed the information gathered from patients to the BAI fr
 ###  7.2. <a name='COVID-19Dashboard'></a>COVID - 19 Dashboard
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Dashboard.jpeg)
 
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Full%20Dashboard%20-%202.jpeg)
+
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Process%20Dashboard.jpeg)
+
 ###  7.3. <a name='DataTransmittedtotheBAIformBAW'></a>Data Transmitted to the BAI form BAW
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Json.png)
 
