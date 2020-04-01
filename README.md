@@ -1,4 +1,37 @@
+<!-- vscode-markdown-toc -->
+* 1. [Summary](#Summary)
+* 2. [Shared Know-How](#SharedKnow-How)
+* 3. [Product Versions](#ProductVersions)
+* 4. [PreRequirements](#PreRequirements)
+* 5. [ODM - Operational Decision Manager](#ODM-OperationalDecisionManager)
+	* 5.1. [Importing the decision service](#Importingthedecisionservice)
+	* 5.2. [Deploying the service](#Deployingtheservice)
+	* 5.3. [Exposing the rule via REST API](#ExposingtheruleviaRESTAPI)
+	* 5.4. [ODM Decision Service Details](#ODMDecisionServiceDetails)
+		* 5.4.1. [Draw a decision model and define input and output data types](#Drawadecisionmodelanddefineinputandoutputdatatypes)
+* 6. [BAW - Business Automation Workflow](#BAW-BusinessAutomationWorkflow)
+	* 6.1. [Execute DB Scripts](#ExecuteDBScripts)
+	* 6.2. [ Import Process Application](#ImportProcessApplication)
+	* 6.3. [Change ODM Host Information](#ChangeODMHostInformation)
+	* 6.4. [Add Environment Variable](#AddEnvironmentVariable)
+	* 6.5. [Starting the Process from Process Portal](#StartingtheProcessfromProcessPortal)
+	* 6.6. [BPMN 2.0 Workflow](#BPMN2.0Workflow)
+	* 6.7. [User Interface](#UserInterface)
+	* 6.8. [Recommendation & Home Quarantine Email Content](#RecommendationHomeQuarantineEmailContent)
+* 7. [Business Automation Insights](#BusinessAutomationInsights)
+	* 7.1. [BAI Architecture](#BAIArchitecture)
+	* 7.2. [COVID - 19 Dashboard](#COVID-19Dashboard)
+	* 7.3. [Data Transmitted to the BAI form BAW](#DataTransmittedtotheBAIformBAW)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # Implementing COVID-19 Symptom Diagnosing by Using IBM Automation Solutions
+
+##  1. <a name='Summary'></a>Summary
 
 This asset is created to show how to define a workflow inside [IBM BAW](https://www.ibm.com/products/business-automation-workflow) (Business Automation Workflow) including UI designs, service integration, database integration and ODM integration. It also gives information about how to integrate workflow data with [IBM BAI](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/topics/con_bai_overview.html) (Business Automation Insights) and generate custom graphics and reports from the data transferred to BAI. 
 
@@ -10,8 +43,7 @@ All of the rulesets implemented inside ODM can easily be changed with the light 
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Scenario.png)
 
-The know-how shared on this asset;
-
+##  2. <a name='SharedKnow-How'></a>Shared Know-How
  * IBM BAW:
     * Implementing a workflow
     * Implementing user interfaces 
@@ -32,32 +64,31 @@ The know-how shared on this asset;
 	* Creating dashboards from collected data. 
 	* Using emitters to collect data. 
 
-## Product Versions
+##  3. <a name='ProductVersions'></a>Product Versions
 | Product       | Version       | 
 | ------------- |:-------------:| 
 | BAW       | 19.0.0.3		|	 
 | ODM    |  8.9.2     |
 
 
-## PreRequirements
+##  4. <a name='PreRequirements'></a>PreRequirements
 * DB2 Database
 * Common Toolkit should be imported to your BAW. Check the [repository](https://github.com/DBA-Turkiye/BAWCommonToolkit) and documentation for more information. 
 * 
 
-## Importing Projects
 
 You can find the summary of required actions in order to import ODM & BPM project. 
 
-# ODM - Operational Decision Manager
+##  5. <a name='ODM-OperationalDecisionManager'></a>ODM - Operational Decision Manager
 
-**Importing the decision service**
+###  5.1. <a name='Importingthedecisionservice'></a>Importing the decision service
 * Open Decision Center - https://YOURIP:PORT/decisioncenter/login
 * Open Decision Service Library
 * Click Import button on the upper left side of the window. 
 * Choose .zip file that you downloaded from this repo under [ODM folder](https://github.com/DBA-Turkiye/DiagnoseCovid19/tree/master/ODM). - Be sure that you downloaded the latest version.
 * After uploading file, click Import. 
 
-**Deploying the service**
+###  5.2. <a name='Deployingtheservice'></a>Deploying the service
 * Click on the name of the Decision Service that you recently imported. 
 * From Branches tab, Click main 
 * From the toolbar, click Deploy to deploy this decision service. 
@@ -68,7 +99,7 @@ You can find the summary of required actions in order to import ODM & BPM projec
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Decision%20Center%20Deploy%20-%202.png)
 
-**Exposing the rule via REST API**
+###  5.3. <a name='ExposingtheruleviaRESTAPI'></a>Exposing the rule via REST API
 
 * After successful deployment, open Rule Execution Server - https://YOURIP:PORT/res
 * Click Explore Tab
@@ -91,11 +122,11 @@ You can find the summary of required actions in order to import ODM & BPM projec
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/RES%20-%20REST%20API.png)
 
-### ODM Decision Service Details
+###  5.4. <a name='ODMDecisionServiceDetails'></a>ODM Decision Service Details
 
 Followed below steps to generate ODM Decision Model;
 
-**Draw a decision model and define input and output data types.**
+####  5.4.1. <a name='Drawadecisionmodelanddefineinputandoutputdatatypes'></a>Draw a decision model and define input and output data types
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/odm-decisionservice/DecisionModel.png)
 
@@ -119,16 +150,16 @@ After defining risk, in our decision table we are defining the required action b
 
 
 
-# BAW - Business Automation Workflow
+##  6. <a name='BAW-BusinessAutomationWorkflow'></a>BAW - Business Automation Workflow
 
-## Execute DB Scripts
+###  6.1. <a name='ExecuteDBScripts'></a>Execute DB Scripts
 
 Execute scripts inside [SQL Scripts](https://github.com/DBA-Turkiye/DiagnoseCovid19/tree/master/SQL%20Scripts) folder. Be sure that you have followed the required steps to import Common Toolkit [repository](https://github.com/DBA-Turkiye/BAWCommonToolkit) and executed DB Scripts inside there.
 
 These scripts includes required parameters to be use inside this project such Sypmtoms for COVID-19, Gender, Medical Disease types, City, County information and some approval status parameters. 
 
 
-##  Import Process Application
+###  6.2. <a name='ImportProcessApplication'></a> Import Process Application
 
 For more details you can check: [Importing and Exporting Process Applications](https://www.ibm.com/support/knowledgecenter/SS8JB4/com.ibm.wbpm.admin.doc/topics/managing_process_applications_E.html)
 
@@ -138,7 +169,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 * In the Import Process App window, a name and acronym have been specified based on information in the file you selected.
 * You can filter the messages by clicking Errors or Warnings.
 
-**Change ODM Host Information**
+###  6.3. <a name='ChangeODMHostInformation'></a>Change ODM Host Information
 * Open Process App Settings
 * Click Servers
 * You will see a server named DiagnoseSymptomsServer, click on this.
@@ -147,7 +178,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAW%20-%20ODM%20Server.png)
 
-**Add Environment Variable** 
+###  6.4. <a name='AddEnvironmentVariable'></a>Add Environment Variable
 
 * Open Process App Settings
 * Click Environment Variables
@@ -156,7 +187,7 @@ For more details you can check: [Importing and Exporting Process Applications](h
   * Default: jdbc/IBMCloudDB2 - Be sure that you have defined Data source inside WAS as defined in the toolkit repository [documentation](https://github.com/DBA-Turkiye/BAWCommonToolkit#define-jdbc-resource-on-was).
 
 
-### Starting the Process from Process Portal
+###  6.5. <a name='StartingtheProcessfromProcessPortal'></a>Starting the Process from Process Portal
 
 * Go to Process Portal https://YOURIP:PORT/ProcessPortal
 * Find Corona Diagnosis Process and click to start
@@ -184,35 +215,35 @@ For more details you can check: [Importing and Exporting Process Applications](h
       * Is healthy
         * An e-mail including preventive information is going to be sent to the patient. 
 
-**BPMN 2.0 Workflow**
+###  6.6. <a name='BPMN2.0Workflow'></a>BPMN 2.0 Workflow
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BPMN%20-%20Workflow.png)
 
-**User Interface**
+###  6.7. <a name='UserInterface'></a>User Interface
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Citizen%20Info.png)
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Address.png)
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Medical%20History.png)
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Symptom%20List.png)
 
-**Recommendation & Home Quarantine Email Content**
+###  6.8. <a name='RecommendationHomeQuarantineEmailContent'></a>Recommendation & Home Quarantine Email Content
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Recommendation%20Email.png)
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/Home%20Quarantine%20-%20Email.png)
 
 
-# Business Automation Insights
+##  7. <a name='BusinessAutomationInsights'></a>Business Automation Insights
 
 IBM Business Automation Insights allows you to capture all events that are generated by the operational systems that are implemented with the Digital Business Automation products, aggregate them into business-relevant KPIs, and present them in meaningful dashboards for lines of business to have a near real-time view on their business operations. For more [details](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/topics/con_bai_overview.html)
 
 In this scenario, we passed the information gathered from patients to the BAI from BAW. And generated dashboards to make it possible to analyze the breakdown of sypmtoms, medical history, age and location. 
 
-**BAI Architecture**
+###  7.1. <a name='BAIArchitecture'></a>BAI Architecture
 ![](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/images/diag_bai_sn_architecture_200x.jpg)
 
-**COVID - 19 Dashboard**
+###  7.2. <a name='COVID-19Dashboard'></a>COVID - 19 Dashboard
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Dashboard.jpeg)
 
-**Data Transmitted to the BAI form BAW**
+###  7.3. <a name='DataTransmittedtotheBAIformBAW'></a>Data Transmitted to the BAI form BAW
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Json.png)
 
 You can import prepared Kibana dashboards to your BAI environment by using [this json file](https://github.com/DBA-Turkiye/DiagnoseCovid19/blob/master/BAI/BAI%20Export.json).
