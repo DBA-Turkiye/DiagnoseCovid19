@@ -241,7 +241,6 @@ In this scenario, we passed the information gathered from patients to the BAI fr
 ![](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/images/diag_bai_sn_architecture_200x.jpg)
 
 ###  7.2. <a name='COVID-19Dashboard'></a>COVID - 19 Dashboard
-![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Dashboard.jpeg)
 
 ![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/BAI%20-%20Full%20Dashboard%20-%202.jpeg)
 
