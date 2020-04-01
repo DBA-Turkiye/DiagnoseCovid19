@@ -71,6 +71,7 @@ All of the rulesets implemented inside ODM can easily be changed with the light 
 | ------------- |:-------------:| 
 | BAW       | 19.0.0.3		|	 
 | ODM    |  8.9.2     |
+| BAI	 |  19.0.0.3	|
 
 
 ##  4. <a name='PreRequirements'></a>PreRequirements
