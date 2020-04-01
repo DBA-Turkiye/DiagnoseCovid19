@@ -1,0 +1,88 @@
+[
+  {
+    "_id": "df00f180-738f-11ea-ad3d-5b6444925f5a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Corona",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{\"mapCenter\":[36.66841891894786,-94.04296875000001],\"mapZoom\":4},\"gridData\":{\"h\":15,\"i\":\"1\",\"w\":24,\"x\":0,\"y\":0},\"id\":\"76be8230-7386-11ea-ad3d-5b6444925f5a\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"2\",\"w\":24,\"x\":24,\"y\":0},\"id\":\"928508c0-7388-11ea-ad3d-5b6444925f5a\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"3\",\"w\":24,\"x\":0,\"y\":15},\"id\":\"6c7d8890-740b-11ea-bad4-dbaebfb1ef64\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"gridData\":{\"w\":24,\"h\":15,\"x\":24,\"y\":15,\"i\":\"4\"},\"version\":\"6.7.1\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"4c767550-740d-11ea-bad4-dbaebfb1ef64\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "76be8230-7386-11ea-ad3d-5b6444925f5a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Corona Mapping USA - StateMAP",
+      "visState": "{\"title\":\"Corona Mapping USA - StateMAP\",\"type\":\"region_map\",\"params\":{\"legendPosition\":\"bottomright\",\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"selectedLayer\":{\"name\":\"USA States\",\"origin\":\"elastic_maps_service\",\"id\":\"usa_states\",\"created_at\":\"2017-04-26T19:45:22.377820\",\"attribution\":\"<a href=\\\"https://www.openstreetmap.org/copyright\\\">&#169; OpenStreetMap contributors</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a>\",\"fields\":[{\"type\":\"id\",\"name\":\"iso_3166_2\",\"description\":\"ISO 3166-2 code\"},{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},{\"type\":\"property\",\"name\":\"name\",\"description\":\"name\"}],\"format\":{\"type\":\"geojson\"},\"layerId\":\"elastic_maps_service.USA States\",\"isEMS\":true},\"emsHotLink\":\"https://maps.elastic.co/v6.7?locale=en#file/usa_states\",\"selectedJoinField\":{\"type\":\"property\",\"name\":\"name\",\"description\":\"name\"},\"isDisplayWarning\":true,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"selectedTmsLayer\":{\"origin\":\"elastic_maps_service\",\"id\":\"road_map\",\"minZoom\":0,\"maxZoom\":10,\"attribution\":\"<p>&#169; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap contributors</a>|<a href=\\\"https://openmaptiles.org\\\">OpenMapTiles</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\"}},\"mapZoom\":2,\"mapCenter\":[0,0],\"outlineWeight\":1,\"showAllShapes\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.SelfAssessmentTG.StateInfo.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{\"mapZoom\":4,\"mapCenter\":[36.4566360115962,-91.142578125]}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-process-summaries-timestamp\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "928508c0-7388-11ea-ad3d-5b6444925f5a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Corona diagnosis - Gender",
+      "visState": "{\"title\":\"Corona diagnosis - Gender\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.SelfAssessmentTG.Gender.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-process-summaries-timestamp\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"query\":{\"match\":{\"data.SelfAssessmentTG.Gender.string.keyword\":{\"query\":\"\",\"type\":\"phrase\"}}},\"meta\":{\"negate\":true,\"index\":\"dba-process-summaries-timestamp\",\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"data.SelfAssessmentTG.Gender.string.keyword\",\"value\":\"\",\"params\":{\"query\":\"\",\"type\":\"phrase\"}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "6c7d8890-740b-11ea-bad4-dbaebfb1ef64",
+    "_type": "visualization",
+    "_source": {
+      "title": "Corona - NeedsQuarantine",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Number of People Who Need Quarantine\"},\"schema\":\"metric\",\"type\":\"count\"}],\"params\":{\"addLegend\":true,\"addTooltip\":true,\"gauge\":{\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":20},{\"from\":20,\"to\":40},{\"from\":40,\"to\":60},{\"from\":60,\"to\":80},{\"from\":80,\"to\":100},{\"from\":100,\"to\":120}],\"extendRange\":true,\"gaugeColorMode\":\"Labels\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Arc\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":true},\"style\":{\"bgColor\":false,\"bgFill\":\"#eee\",\"bgMask\":false,\"bgWidth\":0.9,\"fontSize\":60,\"labelColor\":true,\"mask\":false,\"maskBars\":50,\"subText\":\"\",\"width\":0.9},\"type\":\"meter\",\"verticalSplit\":false},\"isDisplayWarning\":false,\"type\":\"gauge\"},\"title\":\"Corona - NeedsQuarantine\",\"type\":\"gauge\"}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 20\":\"rgb(0,104,55)\",\"20 - 40\":\"rgb(102,189,99)\",\"40 - 60\":\"rgb(217,239,139)\",\"60 - 80\":\"rgb(254,224,139)\",\"80 - 100\":\"rgb(244,109,67)\",\"100 - 120\":\"rgb(165,0,38)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-process-summaries-timestamp\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries-timestamp\",\"key\":\"data.SelfAssessmentTG.AssessmentResult.string.keyword\",\"negate\":false,\"params\":{\"query\":\"NeedsQuarantine\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"NeedsQuarantine\"},\"query\":{\"match\":{\"data.SelfAssessmentTG.AssessmentResult.string.keyword\":{\"query\":\"NeedsQuarantine\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "4c767550-740d-11ea-bad4-dbaebfb1ef64",
+    "_type": "visualization",
+    "_source": {
+      "title": "Corona - Needs Quarantine People Ages",
+      "visState": "{\"title\":\"Corona - Needs Quarantine People Ages\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":true,\"style\":{\"color\":\"#eee\"},\"valueAxis\":\"ValueAxis-1\"},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"filter\":true},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"orderBucketsBySum\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.SelfAssessmentTG.Age.integer\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Needs Quarantine People Ages\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-process-summaries-timestamp\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "2d54f860-7415-11ea-bad4-dbaebfb1ef64",
+    "_type": "visualization",
+    "_source": {
+      "title": "Corona - Hourly Number of Needs Quarantine",
+      "visState": "{\"title\":\"Corona - Hourly Number of Needs Quarantine\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-7d\",\"to\":\"now\",\"mode\":\"quick\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"time_zone\":\"America/New_York\",\"drop_partials\":false,\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Hourly Number Of Needs Quarantine\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-process-summaries-timestamp\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries-timestamp\",\"key\":\"data.SelfAssessmentTG.AssessmentResult.string.keyword\",\"negate\":false,\"params\":{\"query\":\"NeedsQuarantine\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"NeedsQuarantine\"},\"query\":{\"match\":{\"data.SelfAssessmentTG.AssessmentResult.string.keyword\":{\"query\":\"NeedsQuarantine\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  }
+]
