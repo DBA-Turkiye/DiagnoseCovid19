@@ -240,7 +240,7 @@ IBM Business Automation Insights allows you to capture all events that are gener
 In this scenario, we passed the information gathered from patients to the BAI from BAW. And generated dashboards to make it possible to analyze the breakdown of sypmtoms, medical history, age and location. 
 
 ###  7.1. <a name='BAIArchitecture'></a>BAI Architecture
-![](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/images/diag_bai_sn_architecture_200x.jpg)
+![](https://raw.githubusercontent.com/DBA-Turkiye/DiagnoseCovid19/master/Documentation/images/diag_bai.jpg)
 
 ###  7.2. <a name='COVID-19Dashboard'></a>COVID - 19 Dashboard
 
