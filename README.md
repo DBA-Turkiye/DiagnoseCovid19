@@ -82,6 +82,8 @@ All of the rulesets implemented inside ODM can easily be changed with the light 
 You can find the summary of required actions in order to import ODM & BPM project below. 
 
 ##  5. <a name='ODM-OperationalDecisionManager'></a>ODM - Operational Decision Manager
+***Disclaimer:** If you are planning to open this diagnosing tool to public, It is highly recommended to change the rules implemented inside ODM which combines symptoms and diseases with the help of a health professional before going live.*
+
 
 ###  5.1. <a name='Importingthedecisionservice'></a>Importing the decision service
 * Open Decision Center - https://YOURIP:PORT/decisioncenter/login
