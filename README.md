@@ -262,8 +262,8 @@ To build a dashboard, users can follow these steps:
 
 * 1 - In the side navigation, click Dashboard.
 * 2 - Click Create new dashboard.
-* 3- Click Add.
-* 4 -Use Add Panels to add visualizations and saved searches to the dashboard. If there are a large number of visualizations, the lists can be filtered.
+* 3 - Click Add.
+* 4 - Use Add Panels to add visualizations and saved searches to the dashboard. If there are a large number of visualizations, the lists can be filtered.
 
 
 ###  7.4. <a name='DataTransmittedtotheBAIformBAW'></a>Data Transmitted to the BAI form BAW
