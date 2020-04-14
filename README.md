@@ -31,8 +31,12 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+
 # Implementing COVID-19 Symptom Diagnosing by Using IBM Automation Solutions
 * 🧿
+
+***Disclaimer:** If you are planning to open this diagnosing tool to public, It is highly recommended to change the rules implemented inside ODM which combines symptoms and diseases with the help of a health professional before going live.*
+
 ##  1. <a name='Summary'></a>Summary
 
 This asset is created to show how to define a workflow inside [IBM BAW](https://www.ibm.com/products/business-automation-workflow) (Business Automation Workflow) including UI designs, service integration, database integration and ODM integration. It also gives information about how to integrate workflow data with [IBM BAI](https://www.ibm.com/support/knowledgecenter/SSYHZ8_19.0.x/com.ibm.dba.bai/topics/con_bai_overview.html) (Business Automation Insights) and generate custom graphics and reports from the data transferred to BAI. 
@@ -82,8 +86,6 @@ All of the rulesets implemented inside ODM can easily be changed with the light 
 You can find the summary of required actions in order to import ODM & BPM project below. 
 
 ##  5. <a name='ODM-OperationalDecisionManager'></a>ODM - Operational Decision Manager
-***Disclaimer:** If you are planning to open this diagnosing tool to public, It is highly recommended to change the rules implemented inside ODM which combines symptoms and diseases with the help of a health professional before going live.*
-
 
 ###  5.1. <a name='Importingthedecisionservice'></a>Importing the decision service
 * Open Decision Center - https://YOURIP:PORT/decisioncenter/login
