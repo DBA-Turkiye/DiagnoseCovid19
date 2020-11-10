@@ -1,0 +1,18 @@
+<!-- Sample of Decision Server datasource configuration file for Oracle -->
+<server>
+    <!-- Declare the jar files for Oracle access through JDBC. -->
+    <library id="OracleLib">
+            <fileset dir="/drivers" includes="ojdbc*.jar"/>
+    </library>
+
+    <!-- Declare the database -->
+    <dataSource jndiName="jdbc/resdatasource">
+            <jdbcDriver libraryRef="OracleLib"/>
+            <properties.oracle driverType="thin"
+                               serviceName="cp4bpmdbtest.yakindogubank.com"
+                               serverName="172.26.2.154"
+                               portNumber="1521"
+                               user="OSODMTEST"
+                               password="RQj0GthOwkEg"/>
+    </dataSource>
+</server>

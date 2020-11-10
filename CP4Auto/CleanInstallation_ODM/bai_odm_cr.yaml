@@ -1,0 +1,368 @@
+
+###############################################################################
+##
+##Licensed Materials - Property of IBM
+##
+##(C) Copyright IBM Corp. 2020. All Rights Reserved.
+##
+##US Government Users Restricted Rights - Use, duplication or
+##disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+##
+###############################################################################
+apiVersion: icp4a.ibm.com/v1
+kind: ICP4ACluster
+metadata:
+  name: icp4adeploy
+  labels:
+    app.kubernetes.io/instance: ibm-dba
+    app.kubernetes.io/managed-by: ibm-dba
+    app.kubernetes.io/name: ibm-dba
+    release: 20.0.2
+spec:
+  ## CP4A application version
+  appVersion: 20.0.2
+
+  #####################################################################################################################
+  ##  This template CR file reflects the ICP4A plaftorm foundation components shared by most of othe ICP4A capabilities,
+  ##  as well as shared configurations for settings and services applicable to the ICP4A installation environment such
+  ##  as LDAP, data sources, images information, storage classes, and other parameters you can find in the
+  ##  shared_configuration section below.
+  ##
+  ##  The label, or "pattern name", for these foundation components is "foundation". You see this label set in the
+  ##  sc_deployment_patterns parameter in the shared_configuration section of this file.
+  ##
+  ##  The ICP4A operator will automatically install the required foundation components, based on the description below, when
+  ##  it detects the "foundation" pattern name amongst the sc_deployment_patters CR parameter of the CR being applied.
+  ##
+  ##  The foundation components that are automatically installed, by default, by the ICP4A operator are:
+  ##    - Business Automation Navigator (BAN)
+  ##    - Resource Registry (RR)
+  ##
+  ##  These other foundation components are installed based on their need, but their related minimal configuration
+  ##  is included in this CR template.  Those additional platform components are:
+  ##
+  ##    - Business Automation Studio (BAS)
+  ##    - User Management Services (UMS)
+  ##    - Business Automation Insights (BAI)
+  ##
+  ##  Note that from the above foundation components, only BAI (with label "bai") will need to be explicitly specified
+  ##  in the sc_optional_components parameter (in the shared_configuration) to inform the operator to install it, as
+  ##  this installation of BAI reflects a user choice since BAI is not a pre-requisite component for any ICP4A capability.
+  ##
+  ##  This template CR contains the minimal configuration required for foundation components, since the ICP4A operator
+  ##  will take care of defaults for a typicall configuration.
+  ##
+  ##  For BAN, RR, UMS and BAI you will not find dedicated configuration sections in this template since
+  ##  default configurations are being used by the operator.
+  ##
+  ##  For BAB, UMS and BAI, you will only find  configuration parameters in the share_configuration section that need
+  ##  to be configured.
+  ##
+  ##  For BAS, you will find a minimal bastudio_configuration setion is in the CR, which will need to be present
+  ##  and configured by you should if you are planning to install any of the following ICP4A capabilities and features:
+  ##     - Automation Content Analyzer (contentanlyzer)
+  ##     - Automation Digital Worker (digitalworker)
+  ##     - the Applications Designer (app_designer) feature with  Business Automation Application (application)
+  ##     - the Decision Designer feature (ads_designer) with Automation Decision Services (decisions_ads)
+  ##
+  ##  Note: In case non of these is to be installed, the bastudio_configuration should be commented out or deleted
+  ##  from the final CR that will be applied.
+  ##
+  ##  How to use this template:
+  ##
+  ##  Make a copy of this CR foundation template as your starting point ICP4A CR yaml you are manually assembling.
+  ##  Then paste into that CR the information and configuration from the respective
+  ##  ibm_cp4a_cr_enterprise_<capability patter name>.yaml CR template files available in the same location.
+  ##
+  ######################################################################################################################
+  shared_configuration:
+
+    ## FileNet Content Manager (FNCM) license and possible values are: user, non-production, and production.
+    ## This value could be different from the other licenses in the CR.
+    sc_deployment_fncm_license: "production"
+
+    ## Business Automation Workflow (BAW) license and possible values are: user, non-production, and production.
+    ## This value could be different from the other licenses in the CR.
+    sc_deployment_baw_license: "production"
+
+    ## Use this parameter to specify the license for the CP4A deployment and
+    ## the possible values are: non-production and production and if not set, the license will
+    ## be defaulted to production.  This value could be different from the other licenses in the CR.
+    sc_deployment_license: "production"
+
+    ## All CP4A components must use/share the image_pull_secrets to pull images
+    image_pull_secrets:
+    - deployer-dockercfg-s2fdp
+
+    ## All CP4A components must use/share the same docker image repository.  For example, if IBM Entitled Registry is used, then
+    ## it should be "cp.icr.io".  Otherwise, it will be a local docker registry.
+    sc_image_repository: default-route-openshift-image-registry.apps.hb.neareasttech.local/ibmcp4a
+
+    images:
+      keytool_job_container:
+        repository: default-route-openshift-image-registry.apps.hb.neareasttech.local/ibmcp4a/dba-keytool-jobcontainer 
+        tag: 20.0.2
+      dbcompatibility_init_container:
+        repository: default-route-openshift-image-registry.apps.hb.neareasttech.local/ibmcp4a/dba-dbcompatibility-initcontainer 
+        tag: 20.0.2
+      keytool_init_container:
+        repository: default-route-openshift-image-registry.apps.hb.neareasttech.local/ibmcp4a/dba-keytool-initcontainer 
+        tag: 20.0.2
+      umsregistration_initjob:
+        repository: default-route-openshift-image-registry.apps.hb.neareasttech.local/ibmcp4a/dba-umsregistration-initjob 
+        tag: 20.0.2
+
+      ## All CP4A components should use this pull_policy as the default, but it can override by each component
+      pull_policy: IfNotPresent
+
+    ## All CP4A components must use/share the root_ca_secret in order for integration
+    root_ca_secret: icp4a-root-ca
+
+    ## CP4A patterns or capabilities to be deployed.  This CR represents the "application" pattern (aka Business Automation Manager), which includes the following
+    ## mandatory components: ban(Business Automation Navigator), ums (User Management Service), app_engine( Application Engine) and optional components: app_designerollowing
+    ## mandatory components: icn (BAN/Navigator), rr (Resource Registry) and optional components: ums, bas, and bai
+    sc_deployment_patterns: decisions
+
+    ## The optional components to be installed if listed here.  This is normally populated by the User script based on input from the user.  User can
+    ## also manually specify the optional components to be deployed here.  For this foundation CR, the optional components are: ums, bas, and bai
+    sc_optional_components: 
+
+    ## The deployment type as selected by the user.  Possible values are: demo, enteprise
+    sc_deployment_type: enterprise
+
+    ## The platform to be deployed specified by the user.  Possible values are: OCP and other.  This is normally populated by the User script
+    ## based on input from the user.
+    sc_deployment_platform: OCP
+
+    ## For OCP, this is used to create route, you should input a valid hostname in the required field.
+    sc_deployment_hostname_suffix: "{{ meta.name }}apps.hb.neareasttech.local"
+
+    ## If the root certificate authority (CA) key of the external service is not signed by the operator root CA key, provide the TLS certificate of
+    ## the external service to the component's truststore.
+    trusted_certificate_list: []
+
+    ## On OCP 3.x and 4.x, the User script will populate these three (3) parameters based on your input for "enterprise" deployment.
+    ## If you manually deploying without using the User script, then you would provide the different storage classes for the slow, medium
+    ## and fast storage parameters below.  If you only have 1 storage class defined, then you can use that 1 storage class for all 3 parameters.
+    storage_configuration:
+      sc_slow_file_storage_classname: "ibmcp4a"
+      sc_medium_file_storage_classname: "ibmcp4a"
+      sc_fast_file_storage_classname: "ibmcp4a"
+
+  ## The beginning section of LDAP configuration for CP4A
+  ldap_configuration:
+    ## The possible values are: "IBM Security Directory Server" or "Microsoft Active Directory"
+    lc_selected_ldap_type: "Microsoft Active Directory"
+
+    ## The name of the LDAP server to connect
+    lc_ldap_server: "nbdc03.yakindogubank.com"
+
+    ## The port of the LDAP server to connect.  Some possible values are: 389, 636, etc.
+    lc_ldap_port: "389"
+
+    ## The LDAP bind secret for LDAP authentication.  The secret is expected to have ldapUsername and ldapPassword keys.  Refer to Knowledge Center for more info.
+    lc_bind_secret: ldap-bind-secret
+
+    ## The LDAP base DN.  For example, "dc=example,dc=com", "dc=abc,dc=com", etc
+    lc_ldap_base_dn: "dc=yakindogubank,dc=com"
+
+    ## Enable SSL/TLS for LDAP communication. Refer to Knowledge Center for more info.
+    lc_ldap_ssl_enabled: false
+
+    ## The name of the secret that contains the LDAP SSL/TLS certificate.
+    lc_ldap_ssl_secret_name: "<Required>"
+
+    ## The LDAP user name attribute.  One possible value is "*:cn" for TDS and "user:sAMAccountName" for AD. Refer to Knowledge Center for more info.
+    lc_ldap_user_name_attribute: "*:cn"
+
+    ## The LDAP user display name attribute. One possible value is "cn" for TDS and "sAMAccountName" for AD. Refer to Knowledge Center for more info.
+    lc_ldap_user_display_name_attr: "cn"
+
+    ## The LDAP group base DN.  For example, "dc=example,dc=com", "dc=abc,dc=com", etc
+    lc_ldap_group_base_dn: "dc=yakindogubank,dc=com"
+
+    ## The LDAP group name attribute.  One possible value is "*:cn" for TDS and "*:cn" for AD. Refer to Knowledge Center for more info.
+    lc_ldap_group_name_attribute: "*:cn"
+
+    ## The LDAP group display name attribute.  One possible value for both TDS and AD is "cn". Refer to Knowledge Center for more info.
+    lc_ldap_group_display_name_attr: "cn"
+
+    ## The LDAP group membership search filter string.  One possible value is "(&(cn=%v)(|(objectclass=groupOfNames)(objectclass=groupOfUniqueNames)(objectclass=groupOfURLs))" for TDS
+    ## and "(&(cn=%v)(objectcategory=group))" for AD.
+    lc_ldap_group_membership_search_filter: "(ObjectCategory=Group)"
+
+    ## The LDAP group membership ID map.  One possible value is "groupofnames:member" for TDS and "memberOf:member" for AD.
+    lc_ldap_group_member_id_map: "groupofnames:member"
+
+    ## The User script will uncomment the section needed based on user's input from User script.  If you are deploying without the User script,
+    ## uncomment the necessary section (depending if you are using Active Directory (ad) or Tivoli Directory Service (tds)) accordingly.
+    # ad:
+    #   lc_ad_gc_host: "<Required>"
+    #   lc_ad_gc_port: "<Required>"
+    #   lc_user_filter: "(&(samAccountName=%v)(objectClass=user))"
+    #   lc_group_filter: "(&(samAccountName=%v)(objectclass=group))"
+    # tds:
+    #   lc_user_filter: "(&(cn=%v)(objectclass=person))"
+    #   lc_group_filter: "(&(cn=%v)(|(objectclass=groupofnames)(objectclass=groupofuniquenames)(objectclass=groupofurls)))"
+
+   ########################################################################
+  ########   IBM User and Group Management Service configuration  ########
+  ########################################################################
+  ums_configuration:
+    images:
+      ums:
+        repository: cp.icr.io/cp/cp4a/ums/ums
+        tag: 20.0.2
+
+  #TODO
+  ########################################################################
+  ########     IBM Operational Decision Manager Configuration     ########
+  ########################################################################
+  odm_configuration:
+    # Allow to activate more trace for ODM in the Operator pod.
+    debug: true
+    # Allow to specify which version of ODM you want to deploy.
+    # Supported version > 19.0.2
+    # If omitted the latest version will be used.
+    version: 20.0.2
+    image:
+      # Specify the repository used to retrieve the Docker images if you do not want to use the default one.
+      #repository: "image-registry.openshift-image-registry.svc:5000/ibmcp4a"
+      repository: "default-route-openshift-image-registry.apps.hb.neareasttech.local/ibmcp4a"
+      # Specify the tag for the Docker images.
+      # It's a Mandatory tag when you enable odm_configuraton.
+      tag: 8.10.4.0-amd64
+      # Specify the pull policy for the Docker images. See Kuberntes documentation for more inforations.
+      # Possible values : IfNotPresent, Always, Never
+      pullPolicy: IfNotPresent
+      # Optionally specify an array of imagePullSecrets.
+      # Secrets must be manually created in the namespace.
+      # Ex: pullSecrets: "mypullsecret"
+      pullSecrets: 
+      - deployer-dockercfg-s2fdp
+
+    service:
+      # Specify whether to enable Transport Layer Security. If true, ODM web apps are accessed through HTTPS. If false, they are accessed through HTTP.
+      enableTLS: true
+      # Specify the service type.
+      type: NodePort
+
+    ## Decision Server Runtime parameters
+    decisionServerRuntime:
+      # Specify whether to enable Decision Server Runtime.
+      enabled: true
+      # Specify the number of Decision Server Runtime pods.
+      replicaCount: 1
+      # Specify the name of the configMap the wanted logging options. If left empty, default logging options are used.
+      loggingRef:
+      # Specify the name of the configMap the wanted JVM options. If left empty, default JVM options are used.
+      jvmOptionsRef:
+      # Specify the name of the configmap that contains the XU configuration property file.
+      xuConfigRef:
+      resources:
+        {}
+
+    ## Decision Server Console parameters
+    decisionServerConsole:
+      # Specify the name of the configMap the wanted logging options. If left empty, default logging options are used.
+      loggingRef:
+      # Specify the name of the configMap the wanted JVM options. If left empty, default JVM options are used.
+      jvmOptionsRef:
+      resources:
+        {}
+
+    ## Decision Center parameters
+    decisionCenter:
+      # Specify whether to enable Decision Center.
+      enabled: true
+      # Specify the persistence locale for Decision Center.
+      # Possible values  "ar_EG" (Arabic - Egypt), "zh_CN" (Chinese - China), "zh_TW" (Chinese - Taiwan)
+      # "nl_NL" (Netherlands), "en_GB" (English - United Kingdom), "en_US" (English - United States),
+      # "fr_FR" (French - France), "de_DE" (German - Germany), "iw_IL" (Hebrew - Israel), "it_IT" (Italian - Italy),
+      # "ja_JP" (Japanese - Japan) , "ko_KR" (Korean - Korea), "pl_PL" (Polish - Poland),
+      # "pt_BR" (Portuguese - Brazil), "ru_RU" (Russian - Russia), "es_ES" (Spanish - Spain)
+      persistenceLocale: en_US
+      # Specify the number of Decision Center pods.
+      replicaCount: 1
+      # Persistent Volume Claim to access the custom libraries
+      customlibPvc:
+      # Specify the name of the configMap the wanted logging options. If left empty, default logging options are used.
+      loggingRef:
+      # Specify the name of the configMap the wanted JVM options. If left empty, default JVM options are used.
+      jvmOptionsRef:
+      resources:
+        {}
+
+    ## Decision Runner parameters
+    decisionRunner:
+      # Specify whether to enable Decision Runner.
+      enabled: true
+      # Specify the number of Decision Runner pods.
+      replicaCount: 1
+      # Specify the name of the configMap the wanted logging options. If left empty, default logging options are used.
+      loggingRef:
+      # Specify the name of the configMap the wanted JVM options. If left empty, default JVM options are used.
+      jvmOptionsRef:
+      resources:
+        {}
+    
+    internalDatabase:
+      databaseName: odmdb
+      secretCredentials: "ibm-dba-odm-secret"
+      persistence:
+        enabled: true
+        useDynamicProvisioning: true
+        storageClassName: "ibmcp4a"
+        resources:
+          requests:
+            storage: 5Gi
+
+    ## Database - Option 3: External (Oracle)
+    ## Fill in the parameters to use an external database configured by a secret.
+    externalCustomDatabase:
+      # Specify the name of the secret that contains the datasource configuration to use.
+      datasourceRef:
+      # Persistent Volume Claim to access the JDBC Database Driver
+      driverPvc:
+
+    readinessProbe:
+      # Specify the number of seconds after the container has started before readiness probe is initiated.
+      initialDelaySeconds: 5
+      # Specify how often (in seconds) to perform the probe.
+      periodSeconds: 5
+      # Specify how many times Kubernetes will try before giving up when a pod starts and the probe fails. Giving up means marking the pod as Unready.
+      failureThreshold: 45
+      # Specify the number of seconds after which the readiness probe times out.
+      timeoutSeconds: 5
+
+    livenessProbe:
+      # Specify the number of seconds after the container has started before liveness probe is initiated.
+      initialDelaySeconds: 300
+      # Specify how often (in seconds) to perform the probe.
+      periodSeconds: 10
+      # Specify how many times Kubernetes will try before giving up when a pod starts and the probe fails. Giving up means restarting the pod.
+      failureThreshold: 10
+      # Specify the number of seconds after which the liveness probe times out.
+      timeoutSeconds: 5
+
+    customization:
+      # Specify the name of the secret that contains the TLS certificate you want to use. If the parameter is left empty, a default certificate is used.
+      securitySecretRef:
+      # Specify the name of the secret that contains the configuration files required to use the IBM Business Automation Insights emitter.
+      baiEmitterSecretRef:
+      # Specify the label attached to some nodes. Pods are scheduled to the nodes with this label. If the parameter is empty, pods are scheduled randomly.
+      authSecretRef: odm-users-secret
+
+    oidc:
+      # Specify whether to enable OpenId Authentication.
+      enabled: false
+      # Specify the OIDC Allowed Domains
+      allowedDomains:
+
+    networkPolicy:
+      # Enable creation of NetworkPolicy resources.
+      enabled: true
+      # For Kubernetes v1.4, v1.5 and v1.6, use 'extensions/v1beta1'
+      # For Kubernetes v1.7, use 'networking.k8s.io/v1'
+      apiVersion: networking.k8s.io/v1
+

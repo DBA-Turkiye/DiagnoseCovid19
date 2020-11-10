@@ -1,0 +1,134 @@
+Name:               worker-02.hb.neareasttech.local
+Roles:              worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=worker-02.hb.neareasttech.local
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        machineconfiguration.openshift.io/currentConfig: rendered-worker-d1670b6ec037716e43e2f4a8198e684e
+                    machineconfiguration.openshift.io/desiredConfig: rendered-worker-d1670b6ec037716e43e2f4a8198e684e
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/ssh: accessed
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 27 May 2020 14:32:31 +0300
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 06 Jul 2020 10:40:53 +0300   Mon, 06 Jul 2020 10:38:43 +0300   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 06 Jul 2020 10:40:53 +0300   Mon, 06 Jul 2020 10:38:43 +0300   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 06 Jul 2020 10:40:53 +0300   Mon, 06 Jul 2020 10:38:43 +0300   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 06 Jul 2020 10:40:53 +0300   Mon, 06 Jul 2020 10:38:53 +0300   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.100.135
+  Hostname:    worker-02.hb.neareasttech.local
+Capacity:
+ cpu:                8
+ ephemeral-storage:  125277164Ki
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             16397908Ki
+ pods:               250
+Allocatable:
+ cpu:                7500m
+ ephemeral-storage:  115455434152
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             15783508Ki
+ pods:               250
+System Info:
+ Machine ID:                              35ec895ca8824e918e18988cc04dcc01
+ System UUID:                             705e0742-c8fc-12ae-3597-191613b7f014
+ Boot ID:                                 7a4f817e-776c-4b89-8ce5-9ffc0a6c000c
+ Kernel Version:                          4.18.0-147.3.1.el8_1.x86_64
+ OS Image:                                Red Hat Enterprise Linux CoreOS 43.81.202001142154.0 (Ootpa)
+ Operating System:                        linux
+ Architecture:                            amd64
+ Container Runtime Version:               cri-o://1.16.2-6.dev.rhaos4.3.git9e3db66.el8
+ Kubelet Version:                         v1.16.2
+ Kube-Proxy Version:                      v1.16.2
+Non-terminated Pods:                      (45 in total)
+  Namespace                               Name                                                       CPU Requests  CPU Limits   Memory Requests  Memory Limits  AGE
+  ---------                               ----                                                       ------------  ----------   ---------------  -------------  ---
+  baiproject                              my-kafka-zookeeper-0                                       0 (0%)        0 (0%)       0 (0%)           0 (0%)         2d21h
+  baiproject                              my-kafka-zookeeper-2                                       0 (0%)        0 (0%)       0 (0%)           0 (0%)         2d21h
+  ibm-common-services                     cert-manager-webhook-84b4cd5fb6-f5ghq                      100m (1%)     500m (6%)    300Mi (1%)       500Mi (3%)     2d11h
+  ibm-common-services                     configmap-watcher-fc55ff478-74wmv                          100m (1%)     500m (6%)    300Mi (1%)       500Mi (3%)     2d11h
+  ibm-common-services                     ibm-cert-manager-operator-5cfd55699c-58qzx                 10m (0%)      100m (1%)    50Mi (0%)        300Mi (1%)     2d11h
+  ibm-common-services                     ibm-metering-operator-6b49cfcf9f-4srk8                     10m (0%)      100m (1%)    50Mi (0%)        300Mi (1%)     2d11h
+  ibm-common-services                     ibm-mongodb-operator-d49c9c76c-qvb6w                       40m (0%)      40m (0%)     200Mi (1%)       200Mi (1%)     2d11h
+  ibm-common-services                     icp-mongodb-0                                              500m (6%)     500m (6%)    5376Mi (34%)     5376Mi (34%)   35h
+  ibm-common-services                     metering-dm-758f54ff7c-7cwgg                               100m (1%)     1 (13%)      256Mi (1%)       2560Mi (16%)   35h
+  ibm-common-services                     metering-reader-5bdf844bb5-d68jq                           100m (1%)     500m (6%)    128Mi (0%)       512Mi (3%)     2d11h
+  ibm-common-services                     metering-reader-7ff586c674-hhvt8                           100m (1%)     500m (6%)    128Mi (0%)       512Mi (3%)     2d7h
+  ibm-common-services                     metering-report-6799d4f485-zsgvd                           0 (0%)        0 (0%)       0 (0%)           0 (0%)         2d11h
+  ibm-common-services                     metering-ui-59d454d87f-5lzb5                               100m (1%)     500m (6%)    128Mi (0%)       512Mi (3%)     10h
+  ibm-common-services                     secretshare-5854759947-rh9dd                               400m (5%)     1300m (17%)  400Mi (2%)       1536Mi (9%)    2d11h
+  ibmcp4a                                 ibm-cp4a-operator-5ff7f75987-x7jtd                         0 (0%)        0 (0%)       0 (0%)           0 (0%)         35h
+  ibmcp4a                                 icp4adeploy-bai-flink-jobmanager-67f5fb499d-22p9d          100m (1%)     0 (0%)       256Mi (1%)       1280Mi (8%)    11h
+  ibmcp4a                                 icp4adeploy-bai-flink-taskmanager-1                        1 (13%)       1 (13%)      1280Mi (8%)      1536Mi (9%)    9h
+  ibmcp4a                                 icp4adeploy-bai-flink-taskmanager-3                        1 (13%)       1 (13%)      1280Mi (8%)      1536Mi (9%)    9h
+  ibmcp4a                                 icp4adeploy-dba-rr-0f927d9a6f                              100m (1%)     500m (6%)    128Mi (0%)       512Mi (3%)     44s
+  ibmcp4a                                 icp4adeploy-dba-rr-2feee18e44                              100m (1%)     500m (6%)    128Mi (0%)       512Mi (3%)     43s
+  ibmcp4a                                 my-kafka-0                                                 0 (0%)        0 (0%)       0 (0%)           0 (0%)         2d9h
+  ibmcp4a                                 my-kafka-1                                                 0 (0%)        0 (0%)       0 (0%)           0 (0%)         10h
+  ibmcp4a                                 my-kafka-zookeeper-0                                       0 (0%)        0 (0%)       0 (0%)           0 (0%)         2d9h
+  ibmcp4a                                 my-kafka-zookeeper-1                                       0 (0%)        0 (0%)       0 (0%)           0 (0%)         10h
+  ibmcp4a                                 my-kafka-zookeeper-2                                       0 (0%)        0 (0%)       0 (0%)           0 (0%)         2d9h
+  ibmcp4a                                 nfs-provisioner-nfs-client-provisioner-7f57986477-t5g2m    0 (0%)        0 (0%)       0 (0%)           0 (0%)         10h
+  kafka                                   mypod-948d86889-pfwgs                                      0 (0%)        0 (0%)       0 (0%)           0 (0%)         3d14h
+  openshift-cluster-node-tuning-operator  tuned-w4gtd                                                10m (0%)      0 (0%)       50Mi (0%)        0 (0%)         4d10h
+  openshift-dns                           dns-default-jf546                                          110m (1%)     0 (0%)       70Mi (0%)        512Mi (3%)     39d
+  openshift-image-registry                image-registry-7d8dbd59db-j92qm                            100m (1%)     0 (0%)       256Mi (1%)       0 (0%)         10h
+  openshift-image-registry                node-ca-4qnfx                                              10m (0%)      0 (0%)       10Mi (0%)        0 (0%)         39d
+  openshift-ingress                       router-default-59c9446d65-jfq22                            100m (1%)     0 (0%)       256Mi (1%)       0 (0%)         4d10h
+  openshift-machine-config-operator       machine-config-daemon-chlzh                                40m (0%)      0 (0%)       100Mi (0%)       0 (0%)         39d
+  openshift-marketplace                   certified-operators-6bb4ccf9cb-7sg89                       10m (0%)      0 (0%)       100Mi (0%)       0 (0%)         10h
+  openshift-marketplace                   community-operators-85b5f54cff-n4mk6                       10m (0%)      0 (0%)       100Mi (0%)       0 (0%)         10h
+  openshift-marketplace                   opencloud-operators-79fbc795bf-86zsf                       10m (0%)      0 (0%)       100Mi (0%)       0 (0%)         4d10h
+  openshift-monitoring                    alertmanager-main-1                                        100m (1%)     100m (1%)    225Mi (1%)       25Mi (0%)      4d10h
+  openshift-monitoring                    node-exporter-f27kf                                        10m (0%)      0 (0%)       20Mi (0%)        0 (0%)         39d
+  openshift-monitoring                    openshift-state-metrics-b6755756-tmsw4                     120m (1%)     0 (0%)       190Mi (1%)       0 (0%)         4d10h
+  openshift-monitoring                    prometheus-adapter-778dbcccdd-shmgm                        10m (0%)      0 (0%)       20Mi (0%)        0 (0%)         10h
+  openshift-monitoring                    prometheus-k8s-1                                           430m (5%)     200m (2%)    1134Mi (7%)      50Mi (0%)      4d10h
+  openshift-multus                        multus-vnpdv                                               10m (0%)      0 (0%)       150Mi (0%)       0 (0%)         39d
+  openshift-operators                     operand-deployment-lifecycle-manager-796d69c57f-7vqkn      200m (2%)     500m (6%)    200Mi (1%)       512Mi (3%)     10h
+  openshift-sdn                           ovs-xqx5g                                                  200m (2%)     0 (0%)       400Mi (2%)       0 (0%)         39d
+  openshift-sdn                           sdn-x5l5j                                                  100m (1%)     0 (0%)       200Mi (1%)       0 (0%)         39d
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests       Limits
+  --------           --------       ------
+  cpu                5440m (72%)    9340m (124%)
+  memory             13969Mi (90%)  19283Mi (125%)
+  ephemeral-storage  0 (0%)         0 (0%)
+Events:
+  Type     Reason                   Age                    From                                      Message
+  ----     ------                   ----                   ----                                      -------
+  Normal   Starting                 15m                    kubelet, worker-02.hb.neareasttech.local  Starting kubelet.
+  Normal   NodeAllocatableEnforced  15m                    kubelet, worker-02.hb.neareasttech.local  Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientMemory  15m (x2 over 15m)      kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    15m (x2 over 15m)      kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     15m (x2 over 15m)      kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasSufficientPID
+  Warning  Rebooted                 15m                    kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local has been rebooted, boot id: ee14b381-9323-44fc-bcab-affa84ddc958
+  Normal   NodeNotReady             15m                    kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeNotReady
+  Normal   NodeReady                14m                    kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeReady
+  Normal   NodeNotReady             4m27s                  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeNotReady
+  Normal   NodeHasSufficientMemory  4m27s (x2 over 4m27s)  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    4m27s (x2 over 4m27s)  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasNoDiskPressure
+  Normal   Starting                 4m27s                  kubelet, worker-02.hb.neareasttech.local  Starting kubelet.
+  Normal   NodeAllocatableEnforced  4m27s                  kubelet, worker-02.hb.neareasttech.local  Updated Node Allocatable limit across pods
+  Warning  Rebooted                 4m27s                  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local has been rebooted, boot id: bf0bb426-e975-4a2b-9703-e06a94754a6d
+  Normal   NodeHasSufficientPID     4m27s (x2 over 4m27s)  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasSufficientPID
+  Normal   Starting                 2m29s                  kubelet, worker-02.hb.neareasttech.local  Starting kubelet.
+  Normal   NodeAllocatableEnforced  2m29s                  kubelet, worker-02.hb.neareasttech.local  Updated Node Allocatable limit across pods
+  Normal   NodeHasSufficientMemory  2m29s (x2 over 2m29s)  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    2m29s (x2 over 2m29s)  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     2m29s (x2 over 2m29s)  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeHasSufficientPID
+  Warning  Rebooted                 2m29s                  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local has been rebooted, boot id: 7a4f817e-776c-4b89-8ce5-9ffc0a6c000c
+  Normal   NodeNotReady             2m29s                  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeNotReady
+  Normal   NodeReady                2m19s                  kubelet, worker-02.hb.neareasttech.local  Node worker-02.hb.neareasttech.local status is now: NodeReady

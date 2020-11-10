@@ -1,0 +1,13 @@
+
+securitycontextconstraints.security.openshift.io/privileged added to: ["system:serviceaccount:baiproject:default"]
+customresourcedefinition.apiextensions.k8s.io/icp4aclusters.icp4a.ibm.com unchanged
+clusterrole.authorization.openshift.io/ibm-cp4a-operator configured
+clusterrolebinding.authorization.openshift.io/ibmcp4a-cp4a-operator created
+serviceaccount/ibm-cp4a-operator created
+role.rbac.authorization.k8s.io/ibm-cp4a-operator created
+rolebinding.rbac.authorization.k8s.io/ibm-cp4a-operator created
+Now using project "ibmcp4a" on server "https://api.hb.neareasttech.local:6443".
+clusterrole.rbac.authorization.k8s.io/edit added: "cp4a-user"
+clusterrole.rbac.authorization.k8s.io/registry-editor added: "cp4a-user"
+clusterrole.rbac.authorization.k8s.io/ibm-cp4a-operator added: "cp4a-user"
+clusterrole.rbac.authorization.k8s.io/ibm-cp4a-operator added: "cp4a-user"

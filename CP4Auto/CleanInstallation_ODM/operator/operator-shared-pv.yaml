@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    type: local
+  name: operator-shared-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /data/persistentvolumes/operator
+    server: 192.168.100.137
+  persistentVolumeReclaimPolicy: Delete
+

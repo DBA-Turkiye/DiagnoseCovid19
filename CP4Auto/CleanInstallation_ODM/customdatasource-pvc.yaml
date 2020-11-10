@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: customdatasource-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ibmcp4a
+  resources:
+    requests:
+      storage: 1Gi
